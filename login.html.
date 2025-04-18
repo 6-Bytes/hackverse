@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamSync - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .login-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            width: 400px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: #4f46e5;
+            border-radius: 16px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+        
+        h1 {
+            color: #111827;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+        
+        .subtitle {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #111827;
+            transition: border 0.2s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        
+        .remember {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember input {
+            width: auto;
+            margin-right: 8px;
+        }
+        
+        .forgot {
+            color: #4f46e5;
+            text-decoration: none;
+        }
+        
+        .forgot:hover {
+            text-decoration: underline;
+        }
+        
+        .login-btn {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .login-btn:hover {
+            background-color: #4338ca;
+        }
+        
+        .social-login {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .social-text {
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .social-buttons {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .social-btn:hover {
+            background-color: #f9fafb;
+        }
+        
+        .social-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .signup {
+            margin-top: 24px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .signup a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                width: 90%;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5C13.6569 5 15 6.34315 15 8C15 9.65685 13.6569 11 12 11C10.3431 11 9 9.65685 9 8C9 6.34315 10.3431 5 12 5Z"></path>
+                <path d="M15.5 13C17.9853 13 20 15.0147 20 17.5V19H4V17.5C4 15.0147 6.01472 13 8.5 13H15.5Z"></path>
+                <path d="M18 8C19.1046 8 20 7.10457 20 6C20 4.89543 19.1046 4 18 4C16.8954 4 16 4.89543 16 6C16 7.10457 16.8954 8 18 8Z"></path>
+                <path d="M6 8C7.10457 8 8 7.10457 8 6C8 4.89543 7.10457 4 6 4C4.89543 4 4 4.89543 4 6C4 7.10457 4.89543 8 6 8Z"></path>
+                <path d="M21 10.5C21 11.3284 20.3284 12 19.5 12C18.6716 12 18 11.3284 18 10.5C18 9.67157 18.6716 9 19.5 9C20.3284 9 21 9.67157 21 10.5Z"></path>
+                <path d="M6 10.5C6 11.3284 5.32843 12 4.5 12C3.67157 12 3 11.3284 3 10.5C3 9.67157 3.67157 9 4.5 9C5.32843 9 6 9.67157 6 10.5Z"></path>
+            </svg>
+        </div>
+        <h1>Welcome to TeamSync</h1>
+        <p class="subtitle">Sign in to continue to your account</p>
+        
+        <form>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            
+            <div class="remember-forgot">
+                <div class="remember">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#" class="forgot">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="login-btn">Sign In</button>
+        </form>
+        
+        <div class="social-login">
+            <p class="social-text">Or continue with</p>
+            <div class="social-buttons">
+                <button class="social-btn">
+                    <!-- Google icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z" fill="#4285F4"></path>
+                    </svg>
+                </button>
+                <button class="social-btn">
+                    <!-- Microsoft icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.4 2H2v9.4h9.4V2z" fill="#F25022"></path>
+                        <path d="M22 2h-9.4v9.4H22V2z" fill="#7FBA00"></path>
+                        <path d="M11.4 12.6H2V22h9.4v-9.4z" fill="#00A4EF"></path>
+                        <path d="M22 12.6h-9.4V22H22v-9.4z" fill="#FFB900"></path>
+                    </svg>
+                </button>
+                <button class="social-btn">
+                    <!-- Apple icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.183 2c.106 1.549-.445 3.081-1.325 4.187-.896 1.135-2.353 2.016-3.786 1.903-.178-1.479.428-3.006 1.271-3.99.896-1.074 2.45-1.875 3.84-2.1zM21.986 17.666c-.339 1.104-.505 1.599-.944 2.576-.608 1.358-1.477 2.725-2.596 3.67-.671.567-.19.567-1.209.189-1.024-.378-2.075-.378-3.099 0-1.043.386-1.538.378-2.209-.189-.957-.809-1.659-1.865-2.156-2.971-1.163-2.576-1.23-5.511-.165-8.019.789-1.866 2.138-3.303 3.903-3.646 1.039-.203 2.056.101 2.948.464.747.304 1.325.539 2.044.52.644-.012 1.164-.222 1.858-.5.955-.379 1.97-.694 3.089-.46.244.05.481.119.704.209 1.426.756 2.42 2.092 2.986 3.714-1.606.972-2.636 2.603-2.597 4.42.033 1.574.888 3.031 2.227 3.897-.171.421-.37.826-.595 1.217-.186.321-.386.634-.588.934-.307-.156-.582-.353-.818-.586-.822-.815-1.206-1.976-1.042-3.116.143-.98.674-1.874 1.459-2.446.159-.116.312-.242.448-.38a3.347 3.347 0 00-.639-1.149c-.71-.88-1.766-1.405-2.897-1.457-1.277-.059-2.469.534-3.269 1.543-.72.912-1.1 2.101-1.065 3.324.035 1.375.616 2.723 1.58 3.613a4.26 4.26 0 001.609 1.031c.236.09.476.166.717.231-.258.438-.55.854-.873 1.242-.33.397-.698.758-1.095 1.077a5.32 5.32 0 01-1.104-.52c-1.514-.947-2.64-2.465-3.086-4.238-.508-2.016-.169-4.193.92-5.939.833-1.341 2.066-2.383 3.533-2.969a5.575 5.575 0 013.983.059c.062.026.122.053.185.079-.047-.126-.094-.251-.138-.379-.394-1.115-.754-2.538-.414-3.917.418-1.702 1.658-3.164 3.328-3.766.833-.301 1.724-.322 2.583-.144a7.236 7.236 0 00-1.878 1.822c-.808 1.114-1.295 2.477-1.318 3.886.518-.089 1.037-.063 1.531.082 1.332.392 2.454 1.456 2.857 2.786.364 1.2.175 2.53-.523 3.567"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+</body>
+</html>
